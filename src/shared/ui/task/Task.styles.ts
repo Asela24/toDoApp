@@ -9,18 +9,29 @@ const useStyle = createUseStyles({
     margin: '30px auto',
     backgroundColor: '#efe8d4',
     borderRadius: '10px',
+    padding: '0 20px',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   informContainer: {
     display: 'flex',
+    textAlign:'start',
     flexDirection: 'column',
-      gap: '10px',
-      padding: '10px',
+    justifyContent: 'center',
+    gap:'10px',
   },
   taskTitle: {
     fontSize: '20px',
   },
   taskTimer: {
-      fontSize: '15px',
+      fontSize: '16px',
+      color: 'grey'
+  },
+  actionsContainer: {
+    display: 'flex',
+    gap: '20px',
+    fontSize: '2.5rem',
+   /* color: 'violet',*/
   }
 });
 
