@@ -10,7 +10,7 @@ export const Task: FC<TaskProps> = ({
     <div className={classes.taskContainer}>
       <div className={classes.informContainer}>
         <div className={classes.taskTitle}>{title}</div>
-          <div className={classes.taskTitle}>{t}</div>
+          <div className={classes.taskTitle}>{timer}</div>
       </div>
     </div>
   );
