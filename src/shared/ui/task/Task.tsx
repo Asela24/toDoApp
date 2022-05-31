@@ -3,12 +3,15 @@ import PlayArrowOutlinedIcon from '@material-ui/icons/PlayArrowOutlined';
 import PauseOutlinedIcon from '@material-ui/icons/PauseOutlined';
 import DoneOutlinedIcon from '@material-ui/icons/DoneOutlined';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
+import classNames from 'classnames';
 import useStyle from './Task.styles';
+import { CommonStyles } from '../../../styles/Common.styles';
 
 // eslint-disable-next-line no-use-before-define,react/function-component-definition
 export const Task: FC<TaskProps> = ({
   title, timer, isFinished = false, isActive = false,
 }) => {
+  const commonStyle = CommonStyles();
   const classes = useStyle();
   const convertTime = () => {
     const sec = timer % 60;
@@ -21,7 +24,7 @@ export const Task: FC<TaskProps> = ({
     ].join(':');
   };
   return (
-    <div className={classes.taskContainer}>
+    <div className={classNames(classes.taskContainer, commonStyle.containerStyles)}>
       <div className={classes.informContainer}>
         <div className={classes.taskTitle}>{title}</div>
         <div className={classes.taskTimer}>{convertTime()}</div>
@@ -34,7 +37,8 @@ export const Task: FC<TaskProps> = ({
   );
 };
 
-interface TaskProps {
+export interface TaskProps {
+    id: number;
     title: string,
     timer: number,
     // eslint-disable-next-line max-len

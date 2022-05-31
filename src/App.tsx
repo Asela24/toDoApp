@@ -2,18 +2,12 @@
 // @ts-ignore
 import React from 'react';
 import './App.css';
-import { Button } from '@material-ui/core';
-import { Task } from './shared/ui/task'
+import { MainPage } from './pages/mainPage/MainPage';
 
 function App() {
   return (
     <div className="App">
-        <Task
-        timer={100}
-        title={'mytitle'}
-        isActive
-        isFinished
-        />
+      <MainPage />
     </div>
   );
 }
