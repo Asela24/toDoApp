@@ -38,6 +38,6 @@ interface TaskProps {
     title: string,
     timer: number,
     // eslint-disable-next-line max-len
-    isFinished: boolean, // false - Показать кнопку запуска и завершения / true - показать кнопку удаления
-    isActive: boolean, // false - кнопка старта / true - кнопка паузы
+    isFinished?: boolean, // false - Показать кнопку запуска и завершения / true - показать кнопку удаления
+    isActive?: boolean, // false - кнопка старта / true - кнопка паузы
 }
