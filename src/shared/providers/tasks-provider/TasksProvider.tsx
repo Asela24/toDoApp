@@ -13,13 +13,17 @@ const TaskProvider: FC = ({ children }) => {
 
   const appendInWorkTask = (taskName: string) => setTasks([...allTasks, { title: taskName, timer: 0, id: new Date().valueOf() }]);
   const tasks = allTasks.filter((x) => x.isFinished === isTasksFiltredByFinished);
-  const deleteTask = (id:number) => { setTasks(allTasks.filter((task) => task.id !== id)) }
-  const inWorkTasksCount = allTasks.filter(task => !task.isFinished).length;
-  const finishedTasksCount = allTasks.filter(task => task.isFinished).length;
-  const  onCompleteTask = (id: number) => {setTasks(allTasks.map((task) => task.id === id ? { ...task, isFinished: true } : task )}
+  const deleteTask = (id:number) => { setTasks(allTasks.filter((task) => task.id !== id)); };
+  const inWorkTasksCount = allTasks.filter((task) => !task.isFinished).length;
+  const finishedTasksCount = allTasks.filter((task) => task.isFinished).length;
+  const onCompleteTask = (id: number) => { setTasks(allTasks.map((task) => (task.id === id ? { ...task, isFinished: true } : task))); };
 
-    return (
-    <Context.Provider value={{ appendInWorkTask, tasks, deleteTask, inWorkTasksCount, finishedTasksCount, onCompleteTask }}>
+  return (
+    <Context.Provider value={{
+      // eslint-disable-next-line max-len
+      appendInWorkTask, tasks, deleteTask, inWorkTasksCount, finishedTasksCount, onCompleteTask, isTasksFiltredByFinished, onChangeFiltredTasksList,
+    }}
+    >
       {children}
     </Context.Provider>
   );

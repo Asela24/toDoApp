@@ -25,12 +25,15 @@ export const Task: FC<TaskProps> = ({
   };
   return (
     <div className={classNames(classes.taskContainer, commonStyle.containerStyles)}>
+
       <div className={classes.informContainer}>
         <div className={classes.taskTitle}>{title}</div>
         <div className={classes.taskTimer}>{convertTime()}</div>
       </div>
       <div className={classes.actionsContainer}>
-        {isActive ? <PlayArrowOutlinedIcon fontSize="inherit" color="action" /> : <PauseOutlinedIcon fontSize="inherit" />}
+        {isActive
+          ? <PlayArrowOutlinedIcon fontSize="inherit" color="action" />
+          : <PauseOutlinedIcon fontSize="inherit" />}
         {isFinished ? <DoneOutlinedIcon fontSize="inherit" /> : <CloseOutlinedIcon fontSize="inherit" /> }
       </div>
     </div>

@@ -14,7 +14,7 @@ export const MainPage: FC = () => {
 
   return (
     <div>
-      <form className={classNames(classes.container, commonStyle.containerStyles)} noValidate>
+      <div className={classNames(classes.container, commonStyle.containerStyles)}>
         <TextField
           id="date"
           label="Birthday"
@@ -25,15 +25,16 @@ export const MainPage: FC = () => {
             shrink: true,
           }}
         />
-      </form>
-      <form className={classNames(classes.container, commonStyle.containerStyles)} noValidate>
+      </div>
+      <div className={classNames(classes.container, commonStyle.containerStyles)}>
         <TextField id="standard-basic" label="Task" className={classes.inputField} />
-      </form>
+      </div>
       <Task
         timer={100}
         title="mytitle"
         isActive
         isFinished
+        id={0}
       />
     </div>
   );
