@@ -4,15 +4,18 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    alignContent: 'center',
+    flexDirection: 'column',
+    margin: '30px 0',
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: 300,
   },
-  inputField: {
-    width: 300,
+  paperStyle: {
+    width: '400px',
+    margin: '0 auto',
   },
 }));
 
